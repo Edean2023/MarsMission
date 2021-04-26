@@ -1,0 +1,45 @@
+public class Ship {
+
+    String name;
+    String captain; // will be used later
+    CrewMember crew[];
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    Ship(String n, String c, CrewMember cr[])
+    {
+        name = n;
+        captain = c;
+        crew = cr;
+
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    void Roster()
+    {
+        // displays the roster of information of every crew member
+        System.out.println("The current roster and information for the crew of " + name + ":");
+        for(int i =0; i < crew.length; i++)
+        {
+            // amount of food and the weapon information
+            System.out.println("- " + crew[i].returnInfo());
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // removes food for the half week mark
+    void removeFood(int week, int amount)
+    {
+        for(int i =0; i < crew.length; i++)
+        {
+            crew[i].food[week -1] = crew[i].food[week -1] - amount;
+
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}
+
